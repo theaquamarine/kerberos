@@ -10,10 +10,20 @@ $onlyTicketOptionEvents = @"
 "@
 
 # events with ImpersonationLevel = Delegation / %%1840 https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624
+# event_id:4624 and event_data.ImpersonationLevel:%%1840
 $delegationLoginEvents = @"
 <QueryList>
   <Query Id="0" Path="Security">
     <Select Path="Security">*[EventData[Data[@Name='ImpersonationLevel']='%%1840']]</Select>
+  </Query>
+</QueryList>
+"@
+
+# transmitted services != - means constrained delegation
+$transmittedServicesEvents = @"
+<QueryList>
+  <Query Id="0" Path="Security">
+    <Select Path="Security">*[EventData[Data[@Name='TransmittedServices']!='-']]</Select>
   </Query>
 </QueryList>
 "@
