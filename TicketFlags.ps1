@@ -19,7 +19,7 @@
     HardwareAuthentication = 1 -shl 20 #11
     TransitPolicyChecked = 1 -shl 19 #12
     OkAsDelegate = 1 -shl 18 #13
-    RequestAnonymous = 1 -shl 17 #14 unused by KILE obsoleted by rfc8062 https://tools.ietf.org/html/rfc6112
+    # RequestAnonymous = 1 -shl 17 #14 should never appear, only in drafts of 6112? https://datatracker.ietf.org/doc/html/draft-ietf-krb-wg-anon-03
     Canonicalize = 1 -shl 16 #15
     Anonymous = 1 -shl 15 #16 https://tools.ietf.org/html/rfc8062
     #17 unused
